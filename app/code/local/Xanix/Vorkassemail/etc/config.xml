@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Xanix_Vorkassemail>
+            <version>0.1.0</version>
+        </Xanix_Vorkassemail>
+    </modules>
+	<frontend>
+		<events>
+			<checkout_onepage_controller_success_action>
+				<observers>
+					<vorkassemail_observer>
+						<type>singleton</type>
+						<class>Xanix_Vorkassemail_Model_Observer</class>
+						<method>sendVorkassemail</method>
+					</vorkassemail_observer>
+				</observers>
+			</checkout_onepage_controller_success_action>
+		</events>
+	</frontend>
+</config>
